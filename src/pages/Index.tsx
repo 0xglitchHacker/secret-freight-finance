@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { Truck, Key, Shield, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -19,14 +20,18 @@ const Index = () => {
             Secure, private, and transparent financial transactions for the freight industry.
           </p>
           <div className="flex justify-center gap-4">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Truck className="h-5 w-5 mr-2" />
-              Get Started
-            </Button>
-            <Button size="lg" variant="outline">
-              <Key className="h-5 w-5 mr-2" />
-              Learn More
-            </Button>
+            <Link to="/dashboard">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Truck className="h-5 w-5 mr-2" />
+                Get Started
+              </Button>
+            </Link>
+            <Link to="/learn">
+              <Button size="lg" variant="outline">
+                <Key className="h-5 w-5 mr-2" />
+                Learn More
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -145,10 +150,12 @@ const Index = () => {
           <p className="text-xl mb-8 opacity-90">
             Join the future of secure, private freight financing with FHE technology.
           </p>
-          <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-            <Truck className="h-5 w-5 mr-2" />
-            Start Your Journey
-          </Button>
+          <Link to="/dashboard">
+            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+              <Truck className="h-5 w-5 mr-2" />
+              Start Your Journey
+            </Button>
+          </Link>
         </section>
       </main>
 
@@ -164,7 +171,7 @@ const Index = () => {
           <p className="text-gray-400">
             Built with FHE technology for secure, private freight financing
           </p>
-        </div>
+      </div>
       </footer>
     </div>
   );

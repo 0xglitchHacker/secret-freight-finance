@@ -54,6 +54,10 @@ VITE_WALLET_CONNECT_PROJECT_ID=YOUR_WALLET_CONNECT_ID
 VITE_INFURA_API_KEY=YOUR_INFURA_KEY
 ```
 
+**Important**: Replace the placeholder values with your actual API keys:
+- Get your Infura API key from [infura.io](https://infura.io)
+- Get your WalletConnect Project ID from [cloud.walletconnect.com](https://cloud.walletconnect.com)
+
 ## 🔐 Smart Contract Features
 
 The platform includes FHE-enabled smart contracts for:

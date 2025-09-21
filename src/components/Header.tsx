@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Wallet, Truck, Key } from "lucide-react";
 import { WalletConnect } from "./WalletConnect";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-4">
+          <Link to="/" className="flex items-center space-x-4">
             <div className="relative">
               <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
                 <Truck className="h-6 w-6 text-white" />
@@ -22,18 +23,18 @@ const Header = () => {
                 FHE-encrypted freight finance platform
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-gray-600">
+            <Link to="/dashboard" className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
               <Truck className="h-4 w-4" />
-              <span className="text-sm">Freight Finance</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-600">
+              <span className="text-sm">Dashboard</span>
+            </Link>
+            <Link to="/learn" className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
               <Key className="h-4 w-4" />
-              <span className="text-sm">FHE Encrypted</span>
-            </div>
+              <span className="text-sm">Learn More</span>
+            </Link>
           </nav>
 
           {/* Wallet Connection */}
