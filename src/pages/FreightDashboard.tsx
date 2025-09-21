@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Truck, Key, FileText, DollarSign, Shield, Clock } from "lucide-react";
 import { useSecretFreightFinance } from "../hooks/useSecretFreightFinance";
 import { useAccount } from "wagmi";
+import Header from "../components/Header";
 
 const FreightDashboard = () => {
   const { address, isConnected } = useAccount();
@@ -68,6 +69,7 @@ const FreightDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Freight Finance Dashboard</h1>
