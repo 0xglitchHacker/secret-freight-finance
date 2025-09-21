@@ -1,0 +1,20 @@
+import '@rainbow-me/rainbowkit/styles.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { RainbowKitProvider, getDefaultConfig } from '@rainbow-me/rainbowkit';
+import { WagmiProvider } from 'wagmi';
+import { sepolia } from 'wagmi/chains';
+import { config } from '../config/wallet';
+
+const queryClient = new QueryClient();
+
+export function WalletProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider>
+          {children}
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
+}

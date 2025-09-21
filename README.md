@@ -1,73 +1,161 @@
-# Welcome to your Lovable project
+# 🚛 Secret Freight Finance
 
-## Project info
+A revolutionary decentralized freight finance platform leveraging Fully Homomorphic Encryption (FHE) technology to ensure complete privacy while enabling secure financial transactions in the freight industry.
 
-**URL**: https://lovable.dev/projects/2805a06d-a423-48a1-a5fc-4e89119b0167
+## ✨ Core Features
 
-## How can I edit this code?
+- **FHE-Encrypted Transactions**: All financial data remains encrypted during computation
+- **Multi-Wallet Integration**: Seamless support for Rainbow, MetaMask, and other Web3 wallets
+- **Smart Contract Automation**: Automated freight financing with encrypted data processing
+- **Privacy-First Architecture**: Complete data confidentiality without compromising functionality
+- **Real-time Analytics**: Encrypted financial metrics and performance tracking
 
-There are several ways of editing your application.
+## 🛠 Technology Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Framework**: shadcn/ui, Tailwind CSS
+- **Blockchain**: Ethereum Sepolia Testnet
+- **Encryption**: FHE (Fully Homomorphic Encryption)
+- **Wallet Integration**: Rainbow Kit, Wagmi, Viem
+- **Smart Contracts**: Solidity with FHE support
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2805a06d-a423-48a1-a5fc-4e89119b0167) and start prompting.
+## 🚀 Quick Start
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ 
+- npm or yarn
+- Web3 wallet (MetaMask, Rainbow, etc.)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Clone the repository
+git clone https://github.com/0xglitchHacker/secret-freight-finance.git
 
-Follow these steps:
+# Navigate to the project directory
+cd secret-freight-finance
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Environment Configuration
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env.local` file in the root directory:
 
-**Use GitHub Codespaces**
+```env
+VITE_CHAIN_ID=11155111
+VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
+VITE_WALLET_CONNECT_PROJECT_ID=YOUR_WALLET_CONNECT_ID
+VITE_INFURA_API_KEY=YOUR_INFURA_KEY
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔐 Smart Contract Features
 
-## What technologies are used for this project?
+The platform includes FHE-enabled smart contracts for:
 
-This project is built with:
+- **Encrypted Invoice Management**: Private freight invoice processing
+- **Secure Loan Processing**: Encrypted lending and borrowing mechanisms
+- **Insurance Claim Handling**: Private claim processing with FHE
+- **Credit Scoring System**: Encrypted risk assessment and scoring
+- **Reputation Management**: Private reputation tracking
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📁 Project Structure
 
-## How can I deploy this project?
+```
+src/
+├── components/     # Reusable UI components
+│   ├── WalletConnect.tsx
+│   ├── WalletProvider.tsx
+│   └── Header.tsx
+├── hooks/         # Custom React hooks
+│   └── useSecretFreightFinance.ts
+├── lib/           # Utility functions
+│   └── fhe-utils.ts
+├── config/        # Configuration files
+│   └── wallet.ts
+└── contracts/     # Smart contract interfaces
+    └── SecretFreightFinance.sol
+```
 
-Simply open [Lovable](https://lovable.dev/projects/2805a06d-a423-48a1-a5fc-4e89119b0167) and click on Share -> Publish.
+## 🚀 Deployment
 
-## Can I connect a custom domain to my Lovable project?
+### Vercel Deployment (Recommended)
 
-Yes, you can!
+1. **Import Project**: Connect your GitHub repository to Vercel
+2. **Configure Environment Variables**:
+   ```
+   VITE_CHAIN_ID=11155111
+   VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
+   VITE_WALLET_CONNECT_PROJECT_ID=YOUR_WALLET_CONNECT_ID
+   VITE_INFURA_API_KEY=YOUR_INFURA_KEY
+   ```
+3. **Deploy**: Click deploy and wait for build completion
+4. **Custom Domain**: Configure custom domain in Vercel dashboard (optional)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Manual Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+npm run build
+npm run preview
+```
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+### FHE Integration
+
+The platform uses FHE for:
+- Encrypting sensitive financial data
+- Performing computations on encrypted data
+- Maintaining privacy while enabling functionality
+- Secure multi-party computations
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+For support and questions:
+- Open an issue on GitHub
+- Check the documentation
+- Join our community discussions
+
+## 🔒 Security
+
+This project implements FHE (Fully Homomorphic Encryption) to ensure:
+- Complete privacy of financial data
+- Secure computations on encrypted data
+- Zero-knowledge proof capabilities
+- End-to-end encryption for all sensitive operations
+
+## 🌟 Key Benefits
+
+- **Privacy**: Complete data confidentiality
+- **Transparency**: Public blockchain verification
+- **Efficiency**: Automated smart contract execution
+- **Security**: FHE-encrypted data processing
+- **Scalability**: Decentralized architecture
+
+---
+
+Built with ❤️ by the Secret Freight Finance team
