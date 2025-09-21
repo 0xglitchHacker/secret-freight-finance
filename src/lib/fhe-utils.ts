@@ -1,18 +1,11 @@
-import { createFhevmInstance } from 'fhevmjs';
+import { initFhevm, FhevmInstance } from 'fhevmjs';
 
-let fhevmInstance: any = null;
+let fhevmInstance: FhevmInstance | null = null;
 
 export async function initializeFHE() {
   if (!fhevmInstance) {
     try {
-      fhevmInstance = await createFhevmInstance({
-        chainId: 11155111, // Sepolia
-        publicKey: {
-          name: 'FHE',
-          version: '1.0.0',
-          publicKey: '0x...', // FHE public key
-        },
-      });
+      fhevmInstance = await initFhevm();
     } catch (error) {
       console.error('Failed to initialize FHE:', error);
       throw error;
@@ -36,14 +29,12 @@ export async function encryptAmount(
   const instance = await getFhevmInstance();
   
   try {
-    const encryptedData = await instance.encrypt32(value);
-    const inputProof = await instance.generateInputProof({
-      publicKey: instance.getPublicKey(contractAddress),
-      signature: await instance.signMessage(contractAddress, userAddress),
-    });
+    const { publicKey, signature } = instance.getPublicKey(contractAddress);
+    const encryptedData = instance.encrypt(value, publicKey);
+    const inputProof = signature;
     
     return {
-      encryptedData: encryptedData,
+      encryptedData: encryptedData.toString(),
       inputProof: inputProof,
     };
   } catch (error) {
@@ -59,12 +50,8 @@ export async function generateProof(
   const instance = await getFhevmInstance();
   
   try {
-    const proof = await instance.generateInputProof({
-      publicKey: instance.getPublicKey(contractAddress),
-      signature: await instance.signMessage(contractAddress, userAddress),
-    });
-    
-    return proof;
+    const { signature } = instance.getPublicKey(contractAddress);
+    return signature;
   } catch (error) {
     console.error('Proof generation failed:', error);
     throw error;
